@@ -1,1 +1,1 @@
-# react-bootcamp-cf-flights-app
+# Flights finder
