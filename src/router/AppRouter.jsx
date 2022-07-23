@@ -1,7 +1,6 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
-import ResultsFlightsPage from '../pages/ResultsFlightsPage';
-import SearchFlightsPage from '../pages/SearchFlightsPage';
+import { ResultsFlightsPage, SearchFlightsPage } from '../pages';
 
 const AppRouter = () => {
   return (

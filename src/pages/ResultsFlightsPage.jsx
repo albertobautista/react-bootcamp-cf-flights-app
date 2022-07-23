@@ -1,7 +1,5 @@
 import React from 'react';
 
-const ResultsFlightsPage = () => {
+export const ResultsFlightsPage = () => {
   return <div>ResultsFlightsPage</div>;
 };
-
-export default ResultsFlightsPage;
