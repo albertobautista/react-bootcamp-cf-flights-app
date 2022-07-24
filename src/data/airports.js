@@ -77702,10 +77702,10 @@ export const airports = [
 ];
 
 export const airportsFiltered = airports
+  .filter((airport) => airport.country === 'Mexico' || airport.country === 'Argentina')
   .map((airport) => {
     return {
       label: airport.name,
       code: airport.code
     };
-  })
-  .slice(0, 10);
+  });
