@@ -25,6 +25,9 @@ export const fetchFlights = createAsyncThunk(
       };
 
       const response = await flightsApi.get('/v2/shopping/flight-offers', {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem('token')}`
+        },
         params
       });
 

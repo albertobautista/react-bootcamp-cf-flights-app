@@ -11,10 +11,7 @@ export const getToken = async () => {
 };
 
 const flightsApi = axios.create({
-  baseURL: 'https://test.api.amadeus.com/',
-  headers: {
-    Authorization: `Bearer ${localStorage.getItem('token')}`
-  }
+  baseURL: 'https://test.api.amadeus.com/'
 });
 
 export default flightsApi;
