@@ -1,10 +1,18 @@
 import { Grid, Typography } from '@mui/material';
 import React from 'react';
+import { useSelector } from 'react-redux';
 
-import { SearchForm, FlightsResultsList } from '../components';
-import { flightsData } from '../data/flights';
+import { SearchForm, FlightsResultsList, LoadingGif, CardMessageData } from '../components';
+import {
+  flightsResultsSelector,
+  isLoadingSelector,
+  statusMessageSelector
+} from '../store/flights/selectors';
 
 export const SearchFlightsPage = () => {
+  const isLoading = useSelector(isLoadingSelector);
+  const flightsResults = useSelector(flightsResultsSelector);
+  const statusMessage = useSelector(statusMessageSelector);
   return (
     <Grid
       justifyContent="center"
@@ -34,8 +42,13 @@ export const SearchFlightsPage = () => {
         }}>
         <Grid container justifyContent="center">
           <Grid item xs={10}>
-            {/* <LoadingGif /> */}
-            <FlightsResultsList flights={flightsData} />
+            {isLoading ? (
+              <LoadingGif />
+            ) : flightsResults.length > 0 ? (
+              <FlightsResultsList flights={flightsResults} />
+            ) : (
+              <CardMessageData message={statusMessage} />
+            )}
           </Grid>
         </Grid>
       </Grid>
