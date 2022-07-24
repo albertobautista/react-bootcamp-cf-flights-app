@@ -5,14 +5,16 @@ import React from 'react';
 export const CardMessageData = ({ message }) => {
   return (
     <Grid container alignItems="center" justifyContent="center" sx={{ padding: 5 }}>
-      <Grid item justifyContent="center" xs={8}>
+      <Grid item justifyContent="center" xs={12} md={10}>
         <Card sx={{ display: 'flex', padding: 2, justifyContent: 'space-around' }}>
-          <CardMedia
-            component="img"
-            sx={{ width: 300 }}
-            image="./emptyFlights.jpeg"
-            alt="Live from space album cover"
-          />
+          <Box display={{ xs: 'none', lg: 'block' }} si>
+            <CardMedia
+              component="img"
+              sx={{ maxWidth: 700 }}
+              image="./emptyFlights.jpeg"
+              alt="Live from space album cover"
+            />
+          </Box>
           <Box
             sx={{
               display: 'flex',
