@@ -34,7 +34,7 @@ export const fetchFlights = createAsyncThunk(
       console.log('ERROR', error);
       return rejectWithValue({
         isError: true,
-        message: error.message
+        message: 'Error en la búsqueda, intente más tarde'
       });
     }
   }

@@ -10,7 +10,8 @@ export const flightsSlice = createSlice({
     carriers: {},
     fullResults: [],
     flightsCount: 0,
-    error: {}
+    error: {},
+    statusMessage: 'Favor de llenar la información para iniciar la búsqueda'
   },
   reducers: {},
   extraReducers: (builder) => {
@@ -27,10 +28,12 @@ export const flightsSlice = createSlice({
           state.carriers = action.payload.dictionaries.carriers;
           state.flightsCount = action.payload.meta.count;
         }
+        state.statusMessage = 'No se econtraron resultados';
         state.error = {};
       })
       .addCase(fetchFlights.rejected, (state, action) => {
         state.isLoading = false;
+        state.statusMessage = action.payload.message;
         state.error = action.payload;
       });
   }
