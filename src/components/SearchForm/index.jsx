@@ -1,9 +1,10 @@
-import React from 'react';
 import { Grid, TextField, Button, Autocomplete } from '@mui/material';
 import moment from 'moment';
 import { useFormik } from 'formik';
 import * as yup from 'yup';
 import { airportsFiltered } from '../../data/airports';
+import { useDispatch } from 'react-redux';
+import { fetchFlights } from '../../store/flights/thunks';
 
 const validationSchema = yup.object({
   originLocationCode: yup.string().required('Este campo es requerido'),
@@ -20,6 +21,7 @@ const validationSchema = yup.object({
 });
 
 export const SearchForm = () => {
+  const dispatch = useDispatch();
   const formik = useFormik({
     initialValues: {
       originLocationCode: '',
@@ -31,9 +33,13 @@ export const SearchForm = () => {
     },
     validationSchema: validationSchema,
     onSubmit: (values) => {
-      alert(JSON.stringify(values, null, 2));
+      handleSearchFlights(values);
     }
   });
+
+  const handleSearchFlights = (datos) => {
+    dispatch(fetchFlights(datos));
+  };
   return (
     <form onSubmit={formik.handleSubmit}>
       <Grid container spacing={2}>
@@ -147,7 +153,7 @@ export const SearchForm = () => {
             type="number"
             label="Niños"
             inputProps={{
-              min: 1,
+              min: 0,
               max: 9
             }}
             fullWidth
