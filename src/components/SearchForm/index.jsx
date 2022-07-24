@@ -3,9 +3,9 @@ import moment from 'moment';
 import { useFormik } from 'formik';
 import * as yup from 'yup';
 import { airportsFiltered } from '../../data/airports';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { fetchFlights } from '../../store/flights/thunks';
-
+import { isLoadingSelector } from '../../store/flights/selectors';
 const validationSchema = yup.object({
   originLocationCode: yup.string().required('Este campo es requerido'),
   destinationLocationCode: yup.string().required('Este campo es requerido'),
@@ -22,6 +22,7 @@ const validationSchema = yup.object({
 
 export const SearchForm = () => {
   const dispatch = useDispatch();
+  const isLoading = useSelector(isLoadingSelector);
   const formik = useFormik({
     initialValues: {
       originLocationCode: '',
@@ -165,7 +166,7 @@ export const SearchForm = () => {
         </Grid>
 
         <Grid item xs={12} sm={12} md={2}>
-          <Button variant="contained" fullWidth type="submit" color="primary">
+          <Button variant="contained" fullWidth type="submit" color="primary" disabled={isLoading}>
             Buscar
           </Button>
         </Grid>
