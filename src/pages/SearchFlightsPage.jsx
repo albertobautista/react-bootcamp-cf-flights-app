@@ -41,7 +41,7 @@ export const SearchFlightsPage = () => {
           marginTop: 5
         }}>
         <Grid container justifyContent="center">
-          <Grid item xs={10}>
+          <Grid item xs={12} sm={12} md={8}>
             {isLoading ? (
               <LoadingGif />
             ) : flightsResults.length > 0 ? (
