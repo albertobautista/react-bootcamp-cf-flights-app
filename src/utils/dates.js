@@ -13,5 +13,7 @@ export const getDuration = (duration) => {
   const hours = moment.duration(duration).get('hours');
   const minutes = moment.duration(duration).get('minutes');
 
-  return `${days > 0 ? days + ' d' : ''} ${hours} h ${minutes} m`;
+  return `${days > 0 ? days + ' d' : ''} ${hours > 0 ? hours + 'h' : ''}  ${
+    minutes > 0 ? minutes + 'm' : ''
+  }`;
 };
