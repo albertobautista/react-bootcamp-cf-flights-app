@@ -34,7 +34,7 @@ export const fetchFlights = createAsyncThunk(
       console.log('ERROR', error);
       return rejectWithValue({
         isError: true,
-        message: 'Error, try again later'
+        message: error.message
       });
     }
   }

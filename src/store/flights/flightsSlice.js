@@ -30,7 +30,6 @@ export const flightsSlice = createSlice({
         state.error = {};
       })
       .addCase(fetchFlights.rejected, (state, action) => {
-        console.log('action', action);
         state.isLoading = false;
         state.error = action.payload;
       });
