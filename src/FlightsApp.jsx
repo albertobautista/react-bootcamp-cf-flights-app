@@ -1,11 +1,12 @@
-import { CssBaseline } from '@mui/material';
 import AppRouter from './router/AppRouter';
+import { AppTheme } from './theme';
 
 const FlightsApp = () => {
   return (
     <>
-      <CssBaseline />
-      <AppRouter />
+      <AppTheme>
+        <AppRouter />
+      </AppTheme>
     </>
   );
 };
