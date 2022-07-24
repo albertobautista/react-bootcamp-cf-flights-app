@@ -17,7 +17,6 @@ export const FlightResultsItem = (props) => {
     expanded,
     onChange
   } = props;
-  const { segments, duration } = itineraries[0];
 
   return (
     <Accordion expanded={expanded} onChange={onChange}>
@@ -33,7 +32,6 @@ export const FlightResultsItem = (props) => {
           <Grid item xs={12} sm={5} md={4}>
             <Typography>Boletos disponibles: {numberOfBookableSeats}</Typography>
             <Typography>Ultimo día para reservar: {getDate(lastTicketingDate)}</Typography>
-            <Typography fontWeight="bold">Duración: {getDuration(duration)}</Typography>
           </Grid>
           <Grid item xs={12} sm={5} md={6} textAlign="right" marginTop={2}>
             <Typography variant="h6" fontWeight="bold">
@@ -43,9 +41,20 @@ export const FlightResultsItem = (props) => {
         </Grid>
       </AccordionSummary>
       <AccordionDetails sx={{ borderTop: '1px solid rgba(0, 0, 0, .125)' }}>
-        {segments.map((segment, index) => (
-          <SegmentItem key={index} segment={segment} />
-        ))}
+        {itineraries.map((iti, index) => {
+          return (
+            <div key={index}>
+              <Typography textAlign="center" fontWeight="bold" variant="h6" fontStyle="italic">
+                {index === 0
+                  ? `-- Ida  ${getDuration(iti.duration)} --`
+                  : `-- Regreso ${getDuration(iti.duration)} --`}
+              </Typography>
+              {iti.segments.map((segment, index) => (
+                <SegmentItem key={index} segment={segment} />
+              ))}
+            </div>
+          );
+        })}
       </AccordionDetails>
     </Accordion>
   );
