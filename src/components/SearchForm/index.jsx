@@ -158,8 +158,8 @@ export const SearchForm = () => {
           />
         </Grid>
 
-        <Grid item xs={12} sm={2}>
-          <Button variant="contained" fullWidth type="submit">
+        <Grid item xs={12} sm={12} md={2}>
+          <Button variant="contained" fullWidth type="submit" color="primary">
             Buscar
           </Button>
         </Grid>
