@@ -2,7 +2,7 @@
 
 ### React + Vite flights search engine that uses the [Amadeus](https://developers.amadeus.com/) API
 
-[Demo](https://react-vite-realworld.netlify.app/)
+[Demo](https://react-bootcamp-cf-flights-app.vercel.app/)
 
 This project was bootstrapped with:
 
