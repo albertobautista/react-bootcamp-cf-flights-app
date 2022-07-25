@@ -7,7 +7,7 @@ import {
   flightsResultsSelector,
   isLoadingSelector,
   statusMessageSelector
-} from '../store/flights/selectors';
+} from '../redux/flights/selectors';
 
 export const SearchFlightsPage = () => {
   const isLoading = useSelector(isLoadingSelector);

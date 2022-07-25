@@ -4,8 +4,9 @@ import { useFormik } from 'formik';
 import * as yup from 'yup';
 import { airportsFiltered } from '../../data/airports';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchFlights } from '../../store/flights/thunks';
-import { isLoadingSelector } from '../../store/flights/selectors';
+import { isLoadingSelector } from '../../redux/flights/selectors';
+import { fetchFlights } from '../../redux/flights/thunks';
+
 const validationSchema = yup.object({
   originLocationCode: yup.string().required('Este campo es requerido'),
   destinationLocationCode: yup.string().required('Este campo es requerido'),

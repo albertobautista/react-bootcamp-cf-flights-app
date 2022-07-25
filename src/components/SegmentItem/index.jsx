@@ -4,7 +4,7 @@ import React from 'react';
 import FlightTakeoffIcon from '@mui/icons-material/FlightTakeoff';
 import { getDate, getDuration, getTime } from '../../utils';
 import { useSelector } from 'react-redux';
-import { flightsAircraftsSelector, flightsCarriersSelector } from '../../store/flights/selectors';
+import { flightsAircraftsSelector, flightsCarriersSelector } from '../../redux/flights/selectors';
 
 export const SegmentItem = ({ segment }) => {
   const flightsAircrafts = useSelector(flightsAircraftsSelector);

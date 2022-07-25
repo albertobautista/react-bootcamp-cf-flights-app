@@ -2,7 +2,7 @@
 import { Typography } from '@mui/material';
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
-import { flightsCountSelector } from '../../store/flights/selectors';
+import { flightsCountSelector } from '../../redux/flights/selectors';
 import { FlightResultsItem } from '../FlightResultsItem';
 
 export const FlightsResultsList = ({ flights }) => {
