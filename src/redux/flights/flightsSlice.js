@@ -37,6 +37,7 @@ export const flightsSlice = createSlice({
       .addCase(fetchFlights.rejected, (state, action) => {
         state.isLoading = false;
         state.statusMessage = action.payload.message;
+        state.flightsResults = [];
         state.error = action.payload;
       });
   }

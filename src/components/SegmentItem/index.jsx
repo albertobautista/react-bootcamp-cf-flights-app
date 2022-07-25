@@ -22,12 +22,12 @@ export const SegmentItem = ({ segment }) => {
         <Grid item xs={2} sm={2} md={1}>
           <img src={`/Square/${segment.carrierCode}.png`} width={'40px'} />
         </Grid>
-        <Grid item xs={2} sm={2} md={2}>
+        <Grid item xs={5} sm={2} md={3}>
           <Typography fontWeight="bold" fontSize="13px">
             {flightsCarriers[segment.carrierCode]}
           </Typography>
         </Grid>
-        <Grid item xs={8} sm={8} md={9} textAlign="right">
+        <Grid item xs={5} sm={8} md={8} textAlign="right">
           <Typography fontWeight="bold" fontSize="13px">
             Vuelo {segment.number} - {flightsAircrafts[segment.aircraft.code]}
           </Typography>

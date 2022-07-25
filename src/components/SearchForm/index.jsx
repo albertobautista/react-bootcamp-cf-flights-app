@@ -45,7 +45,7 @@ export const SearchForm = () => {
   return (
     <form onSubmit={formik.handleSubmit}>
       <Grid container spacing={2}>
-        <Grid item xs={12} sm={6} md={2}>
+        <Grid item xs={12} sm={6} md={3}>
           <Autocomplete
             disablePortal
             id="originLocationCode"
@@ -65,7 +65,7 @@ export const SearchForm = () => {
             fullWidth
           />
         </Grid>
-        <Grid item xs={12} sm={6} md={2}>
+        <Grid item xs={12} sm={6} md={3}>
           <Autocomplete
             id="destinationLocationCode"
             options={airportsFiltered}
@@ -117,7 +117,7 @@ export const SearchForm = () => {
             type="date"
             label="Regreso"
             inputProps={{
-              min: moment().format('YYYY-MM-DD')
+              min: formik.values.departureDate
             }}
             InputLabelProps={{
               shrink: true
@@ -129,7 +129,7 @@ export const SearchForm = () => {
             helperText={formik.touched.returnDate && formik.errors.returnDate}
           />
         </Grid>
-        <Grid item xs={12} sm={6} md={2}>
+        <Grid item xs={12} sm={6} md={1}>
           <TextField
             id="adults"
             name="adults"
@@ -147,7 +147,7 @@ export const SearchForm = () => {
             helperText={formik.touched.adults && formik.errors.adults}
           />
         </Grid>
-        <Grid item xs={12} sm={6} md={2}>
+        <Grid item xs={12} sm={6} md={1}>
           <TextField
             id="children"
             name="children"
