@@ -18,6 +18,11 @@ export const SearchFlightsPage = () => {
       justifyContent="center"
       padding={5}
       sx={{ minHeight: '100vh', backgroundColor: '#f8f5f4' }}>
+      <Grid item textAlign="center">
+        <Typography variant="h4" fontWeight="bold" sx={{ mb: 1 }}>
+          Sistema de búsqueda de vuelos
+        </Typography>
+      </Grid>
       <Grid
         item
         border={3}
